@@ -1,0 +1,25 @@
+<div class="col-sm-2 col-xs-0"></div>
+<div class="col-sm-8 col-xs-12">
+	<div class="panel-group" *ngFor="let item of shoppingList; let i=index">
+		<div class="panel">
+			<div class="panel-info box-shadow--2dp">
+				<div class="panel-heading">
+					<div class="panel-title pull-left">
+					{{item.recipeName}}
+					</div>
+					<Button class="btn btn-primary pull-right box-shadow--2dp" (click)="onAddToShoppingList(i)">
+					<span class="glyphicon glyphicon-shopping-cart" data-toggle="tooltip" title="Add Ingredients to Shopping List" aria-hidden="true"></span></Button>
+					<div class="clearfix"></div>
+				</div>
+				<div class="panel-body">
+					<div *ngFor="let items of shoppingList[i].Ingredient; let p=index">
+					-{{ items }}
+					</div>
+						<button class="btn btn-danger pull-right box-shadow--2dp" 
+						(click)="onDeleteRecipe(i)"><span class="glyphicon glyphicon-trash" data-toggle="tooltip" title="Remove recipe from Favorites" aria-hidden="true"></span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-sm-2 col-xs-0"></div>

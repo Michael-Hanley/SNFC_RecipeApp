@@ -1,0 +1,48 @@
+
+
+<div class="row">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4">
+		<div class="input-group">
+			<input class="form-control" type="text" maxlength="100" placeholder="Enter an Ingredient"  
+			[(ngModel)]="customerInput"
+			(keyup.enter)="onGetRecipes()"/>
+			<span class="input-group-btn">
+				<button type="button" class="btn btn-primary box-shadow--2dp" 
+				(click)="onGetRecipes()"> 
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</span>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class="col-sm-2"></div>
+<div class="col-sm-8 col-xs-12">
+	<div class="panel-group" *ngFor="let recipe of recipes; let i=index">
+		<div class="panel">
+			<div class= "panel-info box-shadow--2dp">
+			<div class="panel-heading cursor-hand" (click)="onSelectRecipe(i, true)">
+				{{ recipe.Recipe }}
+			</div>
+				<div class="panel-body" *ngIf="index == i && selectedRecipe == true">
+					<div
+					*ngFor="let ingredients of recipes[i].Ingredients">
+					- {{ ingredients }}
+					</div>
+						<div class="pull-right">
+							<button type="button" class="btn btn-primary box-shadow--2dp" (click)="onAddToFavorite(i)">
+							<span class="glyphicon glyphicon-star-empty" aria-hidden="true"
+							data-toggle="tooltip" title="Add Recipe to Favorites"></span>
+							</button>
+							
+							<button type="button" class="btn btn-primary box-shadow--2dp" (click)="onAddToShoppingList(i)">
+							<span class="glyphicon glyphicon-shopping-cart" data-toggle="tooltip" title="Add Ingredients to Shopping List" aria-hidden="true"></span>
+							</button>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

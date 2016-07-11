@@ -1,0 +1,13 @@
+"use strict";
+var Recipe = (function () {
+    function Recipe(Recipe, PLU, IngredientCount, Ingredients) {
+        this.Recipe = Recipe;
+        this.PLU = PLU;
+        this.IngredientCount = IngredientCount;
+        this.Ingredients = Ingredients;
+    }
+    return Recipe;
+}());
+exports.Recipe = Recipe;
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNoYXJlZC9yZWNpcGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBO0lBTUMsZ0JBQVksTUFBYyxFQUFFLEdBQVcsRUFBRSxlQUF1QixFQUFFLFdBQXVCO1FBQ3ZGLElBQUksQ0FBQyxNQUFNLEdBQUcsTUFBTSxDQUFDO1FBQ3JCLElBQUksQ0FBQyxHQUFHLEdBQUcsR0FBRyxDQUFDO1FBQ2YsSUFBSSxDQUFDLGVBQWUsR0FBRyxlQUFlLENBQUM7UUFDdkMsSUFBSSxDQUFDLFdBQVcsR0FBRyxXQUFXLENBQUM7SUFDaEMsQ0FBQztJQUNILGFBQUM7QUFBRCxDQVpBLEFBWUMsSUFBQTtBQVpZLGNBQU0sU0FZbEIsQ0FBQSIsImZpbGUiOiJzaGFyZWQvcmVjaXBlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIFJlY2lwZSB7XHJcblx0UmVjaXBlOiBzdHJpbmc7XHJcblx0UExVOiBudW1iZXI7XHJcblx0SW5ncmVkaWVudENvdW50OiBudW1iZXI7XHJcblx0SW5ncmVkaWVudHM6IEFycmF5PGFueT47XHJcblxyXG5cdGNvbnN0cnVjdG9yKFJlY2lwZTogc3RyaW5nLCBQTFU6IG51bWJlciwgSW5ncmVkaWVudENvdW50OiBudW1iZXIsIEluZ3JlZGllbnRzOiBBcnJheTxhbnk+KSB7XHJcblx0XHRcdHRoaXMuUmVjaXBlID0gUmVjaXBlO1xyXG5cdFx0XHR0aGlzLlBMVSA9IFBMVTtcclxuXHRcdFx0dGhpcy5JbmdyZWRpZW50Q291bnQgPSBJbmdyZWRpZW50Q291bnQ7XHJcblx0XHRcdHRoaXMuSW5ncmVkaWVudHMgPSBJbmdyZWRpZW50cztcclxuXHRcdH1cclxufSJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

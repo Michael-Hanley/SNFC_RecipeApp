@@ -1,0 +1,1 @@
+export let RECIPE_LIST: Array<any> = [];

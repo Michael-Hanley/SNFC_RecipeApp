@@ -1,0 +1,11 @@
+"use strict";
+var shoppingList = (function () {
+    function shoppingList(recipeName, Ingredient) {
+        this.recipeName = recipeName;
+        this.Ingredient = Ingredient;
+    }
+    return shoppingList;
+}());
+exports.shoppingList = shoppingList;
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNoYXJlZC9zaG9wcGluZ0xpc3QudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBO0lBSUMsc0JBQVksVUFBa0IsRUFBRSxVQUF5QjtRQUN2RCxJQUFJLENBQUMsVUFBVSxHQUFHLFVBQVUsQ0FBQztRQUM3QixJQUFJLENBQUMsVUFBVSxHQUFHLFVBQVUsQ0FBQztJQUM5QixDQUFDO0lBQ0gsbUJBQUM7QUFBRCxDQVJBLEFBUUMsSUFBQTtBQVJZLG9CQUFZLGVBUXhCLENBQUEiLCJmaWxlIjoic2hhcmVkL3Nob3BwaW5nTGlzdC5qcyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjbGFzcyBzaG9wcGluZ0xpc3Qge1xyXG5cdHJlY2lwZU5hbWU6IHN0cmluZ1xyXG5cdEluZ3JlZGllbnQ6IEFycmF5PHN0cmluZz47XHJcblxyXG5cdGNvbnN0cnVjdG9yKHJlY2lwZU5hbWU6IHN0cmluZywgSW5ncmVkaWVudDogQXJyYXk8c3RyaW5nPikge1xyXG5cdFx0XHR0aGlzLnJlY2lwZU5hbWUgPSByZWNpcGVOYW1lO1xyXG5cdFx0XHR0aGlzLkluZ3JlZGllbnQgPSBJbmdyZWRpZW50O1xyXG5cdFx0fVxyXG59Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
