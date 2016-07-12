@@ -10,7 +10,7 @@ import {LoginComponent}  from "./login.component/login.component";
 @Component({
   selector: 'my-app',
   directives: [ROUTER_DIRECTIVES],
-	precompile: [FavoriteRecipeComponent, IngredientListComponent, GetRecipeComponent
+	precompile: [FavoriteRecipeComponent, IngredientListComponent, GetRecipeComponent,
 		SignupComponent, LoginComponent],
   template: `
 	<img src="./assets/logo/snfc_circle_logo.jpg" height="100" width="100" class="top-spacer logo"> 	

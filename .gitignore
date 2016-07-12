@@ -3,9 +3,11 @@
 # compiled output
 /dist
 /tmp
+/app
 
 # dependencies
 /node_modules
+/assets/node_modules
 /bower_components
 
 # IDEs and editors
