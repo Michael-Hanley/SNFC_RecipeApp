@@ -41,7 +41,7 @@ export class LoginComponent{
 	}
 
 	onSubmit(value: Object): void {
-		console.log(value.value);
+		console.log(value);
 	}
 
 

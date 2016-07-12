@@ -8,27 +8,49 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var common_1 = require("@angular/common");
-var common_2 = require("@angular/common");
-var LoginComponent = (function () {
-    function LoginComponent(fb) {
+const core_1 = require('@angular/core');
+const common_1 = require("@angular/common");
+const common_2 = require("@angular/common");
+let LoginComponent = class LoginComponent {
+    constructor(fb) {
         this.loginForm = fb.group({
             email: ['', common_2.Validators.required],
             password: ['', common_2.Validators.required],
         });
     }
-    LoginComponent.prototype.onSubmit = function (value) {
-        console.log(value.value);
-    };
-    LoginComponent = __decorate([
-        core_1.Component({
-            template: "\n\n\n\t\t<div class=\"col-lg-4 col-sm-3 col-xs-0\"></div>\n\t\t<div class=\"col-lg-4 col-sm-6 col-xs-12\">\n\t\t\t<form [ngFormModel]=\"loginForm\" (ngSubmit)=\"onSubmit(loginForm)\">\n\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t<label for=\"email\">User Name</label>\n\t\t\t\t\t<input type=\"email\" placeholder=\"Example@domain.com\" class=\"form-control\" maxlength=\"100\" id=\"email\" \n\t\t\t\t\t[ngFormControl]=\"loginForm.controls['email']\">\n\t\t\t\t</div>\n\t\t\t\t<br>\n\t\t\t\t<div class=\"bottom-spacer\">\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<label for=\"password\">Enter Password</label>\n\t\t\t\t\t\t<input class=\"form-control\" type=\"password\" id=\"password\"  maxlength=\"100\" placeholder=\"Password\"\n\t\t\t\t\t\t[ngFormControl]=\"loginForm.controls['password']\">\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<button class=\"btn btn-primary box-shadow--2dp\" [disabled]=\"!loginForm.valid\">Submit</button>\n\t\t\t</form>\n\t\t</div>\n\n\t",
-        }), 
-        __metadata('design:paramtypes', [common_1.FormBuilder])
-    ], LoginComponent);
-    return LoginComponent;
-}());
+    onSubmit(value) {
+        console.log(value);
+    }
+};
+LoginComponent = __decorate([
+    core_1.Component({
+        template: `
+
+
+		<div class="col-lg-4 col-sm-3 col-xs-0"></div>
+		<div class="col-lg-4 col-sm-6 col-xs-12">
+			<form [ngFormModel]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+				<div class="form-group">
+					<label for="email">User Name</label>
+					<input type="email" placeholder="Example@domain.com" class="form-control" maxlength="100" id="email" 
+					[ngFormControl]="loginForm.controls['email']">
+				</div>
+				<br>
+				<div class="bottom-spacer">
+					<div class="form-group">
+						<label for="password">Enter Password</label>
+						<input class="form-control" type="password" id="password"  maxlength="100" placeholder="Password"
+						[ngFormControl]="loginForm.controls['password']">
+					</div>
+				</div>
+				<button class="btn btn-primary box-shadow--2dp" [disabled]="!loginForm.valid">Submit</button>
+			</form>
+		</div>
+
+	`,
+    }), 
+    __metadata('design:paramtypes', [common_1.FormBuilder])
+], LoginComponent);
 exports.LoginComponent = LoginComponent;
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvZ2luLmNvbXBvbmVudC9sb2dpbi5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFBLHFCQUF3QixlQUFlLENBQUMsQ0FBQTtBQUV4Qyx1QkFBMEIsaUJBQWlCLENBQUMsQ0FBQTtBQUM1Qyx1QkFBeUIsaUJBQWlCLENBQUMsQ0FBQTtBQThCM0M7SUFFQyx3QkFBWSxFQUFlO1FBQzFCLElBQUksQ0FBQyxTQUFTLEdBQUcsRUFBRSxDQUFDLEtBQUssQ0FBQztZQUN6QixLQUFLLEVBQUUsQ0FBQyxFQUFFLEVBQUUsbUJBQVUsQ0FBQyxRQUFRLENBQUM7WUFDaEMsUUFBUSxFQUFFLENBQUMsRUFBRSxFQUFFLG1CQUFVLENBQUMsUUFBUSxDQUFDO1NBQ25DLENBQUMsQ0FBQztJQUNKLENBQUM7SUFFRCxpQ0FBUSxHQUFSLFVBQVMsS0FBYTtRQUNyQixPQUFPLENBQUMsR0FBRyxDQUFDLEtBQUssQ0FBQyxLQUFLLENBQUMsQ0FBQztJQUMxQixDQUFDO0lBdENGO1FBQUMsZ0JBQVMsQ0FBQztZQUNWLFFBQVEsRUFBQyxzOUJBdUJSO1NBQ0QsQ0FBQzs7c0JBQUE7SUFnQkYscUJBQUM7QUFBRCxDQWRBLEFBY0MsSUFBQTtBQWRZLHNCQUFjLGlCQWMxQixDQUFBIiwiZmlsZSI6ImxvZ2luLmNvbXBvbmVudC9sb2dpbi5jb21wb25lbnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge0NvbXBvbmVudH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XHJcbmltcG9ydCB7Q29udHJvbEdyb3VwfSBmcm9tIFwiQGFuZ3VsYXIvY29tbW9uXCI7XHJcbmltcG9ydCB7Rm9ybUJ1aWxkZXJ9IGZyb20gXCJAYW5ndWxhci9jb21tb25cIjtcclxuaW1wb3J0IHtWYWxpZGF0b3JzfSBmcm9tIFwiQGFuZ3VsYXIvY29tbW9uXCI7XHJcbmltcG9ydCB7Q29udHJvbH0gZnJvbSBcIkBhbmd1bGFyL2NvbW1vblwiO1xyXG5cclxuQENvbXBvbmVudCh7XHJcblx0dGVtcGxhdGU6YFxyXG5cclxuXHJcblx0XHQ8ZGl2IGNsYXNzPVwiY29sLWxnLTQgY29sLXNtLTMgY29sLXhzLTBcIj48L2Rpdj5cclxuXHRcdDxkaXYgY2xhc3M9XCJjb2wtbGctNCBjb2wtc20tNiBjb2wteHMtMTJcIj5cclxuXHRcdFx0PGZvcm0gW25nRm9ybU1vZGVsXT1cImxvZ2luRm9ybVwiIChuZ1N1Ym1pdCk9XCJvblN1Ym1pdChsb2dpbkZvcm0pXCI+XHJcblx0XHRcdFx0PGRpdiBjbGFzcz1cImZvcm0tZ3JvdXBcIj5cclxuXHRcdFx0XHRcdDxsYWJlbCBmb3I9XCJlbWFpbFwiPlVzZXIgTmFtZTwvbGFiZWw+XHJcblx0XHRcdFx0XHQ8aW5wdXQgdHlwZT1cImVtYWlsXCIgcGxhY2Vob2xkZXI9XCJFeGFtcGxlQGRvbWFpbi5jb21cIiBjbGFzcz1cImZvcm0tY29udHJvbFwiIG1heGxlbmd0aD1cIjEwMFwiIGlkPVwiZW1haWxcIiBcclxuXHRcdFx0XHRcdFtuZ0Zvcm1Db250cm9sXT1cImxvZ2luRm9ybS5jb250cm9sc1snZW1haWwnXVwiPlxyXG5cdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdDxicj5cclxuXHRcdFx0XHQ8ZGl2IGNsYXNzPVwiYm90dG9tLXNwYWNlclwiPlxyXG5cdFx0XHRcdFx0PGRpdiBjbGFzcz1cImZvcm0tZ3JvdXBcIj5cclxuXHRcdFx0XHRcdFx0PGxhYmVsIGZvcj1cInBhc3N3b3JkXCI+RW50ZXIgUGFzc3dvcmQ8L2xhYmVsPlxyXG5cdFx0XHRcdFx0XHQ8aW5wdXQgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIiB0eXBlPVwicGFzc3dvcmRcIiBpZD1cInBhc3N3b3JkXCIgIG1heGxlbmd0aD1cIjEwMFwiIHBsYWNlaG9sZGVyPVwiUGFzc3dvcmRcIlxyXG5cdFx0XHRcdFx0XHRbbmdGb3JtQ29udHJvbF09XCJsb2dpbkZvcm0uY29udHJvbHNbJ3Bhc3N3b3JkJ11cIj5cclxuXHRcdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdDxidXR0b24gY2xhc3M9XCJidG4gYnRuLXByaW1hcnkgYm94LXNoYWRvdy0tMmRwXCIgW2Rpc2FibGVkXT1cIiFsb2dpbkZvcm0udmFsaWRcIj5TdWJtaXQ8L2J1dHRvbj5cclxuXHRcdFx0PC9mb3JtPlxyXG5cdFx0PC9kaXY+XHJcblxyXG5cdGAsXHJcbn0pXHJcblxyXG5leHBvcnQgY2xhc3MgTG9naW5Db21wb25lbnR7XHJcblx0bG9naW5Gb3JtOiBDb250cm9sR3JvdXA7XHJcblx0Y29uc3RydWN0b3IoZmI6IEZvcm1CdWlsZGVyKSB7IFxyXG5cdFx0dGhpcy5sb2dpbkZvcm0gPSBmYi5ncm91cCh7XHJcblx0XHRcdGVtYWlsOiBbJycsIFZhbGlkYXRvcnMucmVxdWlyZWRdLFxyXG5cdFx0XHRwYXNzd29yZDogWycnLCBWYWxpZGF0b3JzLnJlcXVpcmVkXSxcclxuXHRcdH0pO1xyXG5cdH1cclxuXHJcblx0b25TdWJtaXQodmFsdWU6IE9iamVjdCk6IHZvaWQge1xyXG5cdFx0Y29uc29sZS5sb2codmFsdWUudmFsdWUpO1xyXG5cdH1cclxuXHJcblxyXG59Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvZ2luLmNvbXBvbmVudC9sb2dpbi5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFBLHVCQUF3QixlQUFlLENBQUMsQ0FBQTtBQUV4Qyx5QkFBMEIsaUJBQWlCLENBQUMsQ0FBQTtBQUM1Qyx5QkFBeUIsaUJBQWlCLENBQUMsQ0FBQTtBQThCM0M7SUFFQyxZQUFZLEVBQWU7UUFDMUIsSUFBSSxDQUFDLFNBQVMsR0FBRyxFQUFFLENBQUMsS0FBSyxDQUFDO1lBQ3pCLEtBQUssRUFBRSxDQUFDLEVBQUUsRUFBRSxtQkFBVSxDQUFDLFFBQVEsQ0FBQztZQUNoQyxRQUFRLEVBQUUsQ0FBQyxFQUFFLEVBQUUsbUJBQVUsQ0FBQyxRQUFRLENBQUM7U0FDbkMsQ0FBQyxDQUFDO0lBQ0osQ0FBQztJQUVELFFBQVEsQ0FBQyxLQUFhO1FBQ3JCLE9BQU8sQ0FBQyxHQUFHLENBQUMsS0FBSyxDQUFDLENBQUM7SUFDcEIsQ0FBQztBQUdGLENBQUM7QUF6Q0Q7SUFBQyxnQkFBUyxDQUFDO1FBQ1YsUUFBUSxFQUFDOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztFQXVCUjtLQUNELENBQUM7O2tCQUFBO0FBRVcsc0JBQWMsaUJBYzFCLENBQUEiLCJmaWxlIjoibG9naW4uY29tcG9uZW50L2xvZ2luLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Q29tcG9uZW50fSBmcm9tICdAYW5ndWxhci9jb3JlJztcclxuaW1wb3J0IHtDb250cm9sR3JvdXB9IGZyb20gXCJAYW5ndWxhci9jb21tb25cIjtcclxuaW1wb3J0IHtGb3JtQnVpbGRlcn0gZnJvbSBcIkBhbmd1bGFyL2NvbW1vblwiO1xyXG5pbXBvcnQge1ZhbGlkYXRvcnN9IGZyb20gXCJAYW5ndWxhci9jb21tb25cIjtcclxuaW1wb3J0IHtDb250cm9sfSBmcm9tIFwiQGFuZ3VsYXIvY29tbW9uXCI7XHJcblxyXG5AQ29tcG9uZW50KHtcclxuXHR0ZW1wbGF0ZTpgXHJcblxyXG5cclxuXHRcdDxkaXYgY2xhc3M9XCJjb2wtbGctNCBjb2wtc20tMyBjb2wteHMtMFwiPjwvZGl2PlxyXG5cdFx0PGRpdiBjbGFzcz1cImNvbC1sZy00IGNvbC1zbS02IGNvbC14cy0xMlwiPlxyXG5cdFx0XHQ8Zm9ybSBbbmdGb3JtTW9kZWxdPVwibG9naW5Gb3JtXCIgKG5nU3VibWl0KT1cIm9uU3VibWl0KGxvZ2luRm9ybSlcIj5cclxuXHRcdFx0XHQ8ZGl2IGNsYXNzPVwiZm9ybS1ncm91cFwiPlxyXG5cdFx0XHRcdFx0PGxhYmVsIGZvcj1cImVtYWlsXCI+VXNlciBOYW1lPC9sYWJlbD5cclxuXHRcdFx0XHRcdDxpbnB1dCB0eXBlPVwiZW1haWxcIiBwbGFjZWhvbGRlcj1cIkV4YW1wbGVAZG9tYWluLmNvbVwiIGNsYXNzPVwiZm9ybS1jb250cm9sXCIgbWF4bGVuZ3RoPVwiMTAwXCIgaWQ9XCJlbWFpbFwiIFxyXG5cdFx0XHRcdFx0W25nRm9ybUNvbnRyb2xdPVwibG9naW5Gb3JtLmNvbnRyb2xzWydlbWFpbCddXCI+XHJcblx0XHRcdFx0PC9kaXY+XHJcblx0XHRcdFx0PGJyPlxyXG5cdFx0XHRcdDxkaXYgY2xhc3M9XCJib3R0b20tc3BhY2VyXCI+XHJcblx0XHRcdFx0XHQ8ZGl2IGNsYXNzPVwiZm9ybS1ncm91cFwiPlxyXG5cdFx0XHRcdFx0XHQ8bGFiZWwgZm9yPVwicGFzc3dvcmRcIj5FbnRlciBQYXNzd29yZDwvbGFiZWw+XHJcblx0XHRcdFx0XHRcdDxpbnB1dCBjbGFzcz1cImZvcm0tY29udHJvbFwiIHR5cGU9XCJwYXNzd29yZFwiIGlkPVwicGFzc3dvcmRcIiAgbWF4bGVuZ3RoPVwiMTAwXCIgcGxhY2Vob2xkZXI9XCJQYXNzd29yZFwiXHJcblx0XHRcdFx0XHRcdFtuZ0Zvcm1Db250cm9sXT1cImxvZ2luRm9ybS5jb250cm9sc1sncGFzc3dvcmQnXVwiPlxyXG5cdFx0XHRcdFx0PC9kaXY+XHJcblx0XHRcdFx0PC9kaXY+XHJcblx0XHRcdFx0PGJ1dHRvbiBjbGFzcz1cImJ0biBidG4tcHJpbWFyeSBib3gtc2hhZG93LS0yZHBcIiBbZGlzYWJsZWRdPVwiIWxvZ2luRm9ybS52YWxpZFwiPlN1Ym1pdDwvYnV0dG9uPlxyXG5cdFx0XHQ8L2Zvcm0+XHJcblx0XHQ8L2Rpdj5cclxuXHJcblx0YCxcclxufSlcclxuXHJcbmV4cG9ydCBjbGFzcyBMb2dpbkNvbXBvbmVudHtcclxuXHRsb2dpbkZvcm06IENvbnRyb2xHcm91cDtcclxuXHRjb25zdHJ1Y3RvcihmYjogRm9ybUJ1aWxkZXIpIHsgXHJcblx0XHR0aGlzLmxvZ2luRm9ybSA9IGZiLmdyb3VwKHtcclxuXHRcdFx0ZW1haWw6IFsnJywgVmFsaWRhdG9ycy5yZXF1aXJlZF0sXHJcblx0XHRcdHBhc3N3b3JkOiBbJycsIFZhbGlkYXRvcnMucmVxdWlyZWRdLFxyXG5cdFx0fSk7XHJcblx0fVxyXG5cclxuXHRvblN1Ym1pdCh2YWx1ZTogT2JqZWN0KTogdm9pZCB7XHJcblx0XHRjb25zb2xlLmxvZyh2YWx1ZSk7XHJcblx0fVxyXG5cclxuXHJcbn0iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

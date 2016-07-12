@@ -50,7 +50,7 @@ export class SignupComponent{
 		}, { validator: areEqual('password','confirmPassword')});
 	}
 	onSubmit(value: Object): void {
-		console.log(value.value);
+		console.log(value);
 	}
 
 
