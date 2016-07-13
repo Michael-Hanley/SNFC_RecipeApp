@@ -5,10 +5,13 @@ import { environment } from './environment';
 import { APP_ROUTER_PROVIDERS } from './router.component/app.routes';
 import { HTTP_PROVIDERS } from "@angular/http";
 import { ShoppingListService } from "./services/shopping-list.service";
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 if (environment.production) {
   enableProdMode();
 }
 
-bootstrap(AppComponent, [HTTP_PROVIDERS, APP_ROUTER_PROVIDERS, ShoppingListService]);
+bootstrap(AppComponent, [HTTP_PROVIDERS, APP_ROUTER_PROVIDERS, ShoppingListService,
+	disableDeprecatedForms(), provideForms()
+]);
 
