@@ -13,11 +13,16 @@ import {LoginComponent}  from "./login.component/login.component";
 		GetRecipeComponent, SignupComponent, LoginComponent],
   template: `
 	<img src="./assets/logo/snfc_circle_logo.jpg" height="100" width="100" class="top-spacer logo"> 	
-		<header>
-			<nav class="navbar">
-				<div class="container-fluid">
-					<div class="navbar-header">
-					</div>
+		<nav class="navbar"  role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapseNav" aria-expanded="false">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="collapseNav">
 					<ul class="nav navbar-nav">
 						<li><a [routerLink]="['/recipes']">Recipes</a></li>
 						<li><a [routerLink]="['/favorite-recipes']">Favorite Recipes</a></li> 
@@ -28,8 +33,8 @@ import {LoginComponent}  from "./login.component/login.component";
 						<li><a [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</ul>
 				</div>
-			</nav>
-		</header>
+			</div>
+		</nav>
 	<br>
 	<div>
 		<router-outlet></router-outlet>

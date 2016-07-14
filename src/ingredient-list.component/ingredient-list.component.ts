@@ -44,7 +44,6 @@ export class IngredientListComponent implements OnInit{
 
 	onSubmit()
 	{
-		console.log(this.myForm.value.itemName);
 		let k:number = this.myForm.value.amount;
 		this._shoppingListService.addItem({Ingredient: this.myForm.value.itemName, ingredientCount: k});
 	}
