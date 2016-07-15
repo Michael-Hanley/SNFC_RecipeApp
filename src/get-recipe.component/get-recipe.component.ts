@@ -7,18 +7,26 @@ import {RECIPE_LIST} from "../mock/recipe-list";
 import {CUSTOMERINPUT} from "../mock/customer-input";
 import {SHOPPING_LIST} from "../mock/shopping-list";
 import {shoppingList} from "../shared/shoppingList";
+import { DROPDOWN_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
+import {CORE_DIRECTIVES} from '@angular/common';
 
 @Component
 ({
     templateUrl: 'src/get-recipe.component/get-recipe.tpl.html',
+	directives: [DROPDOWN_DIRECTIVES, CORE_DIRECTIVES],
     providers: [HttpService]
 })
 export class GetRecipeComponent implements OnInit
 {	
+	//drop down boostrap req
+	public disabled:boolean = false;
+  	public status:{isopen:boolean} = {isopen: false};
+
 	recipes: Recipe[]; // saves the array of Recipe objects from the http service.
 	index: number; // index of the selected recipe
 	customerInput: string; // Search term the customer has entered
 	selectedRecipe: boolean = false; // Testing if the customer has selected a recipe. 
+	allergies: Array<any> = ['eggs', 'egg', 'fish', 'milk', 'peanuts', 'shellfish', 'soya', 'wheat', 'soy', 'soy milk', 'egg noodles'];
 
 	constructor(private _httpService: HttpService, 
 		private _shoppingListService: ShoppingListService) { }
@@ -81,4 +89,16 @@ export class GetRecipeComponent implements OnInit
 		this.selectedRecipe = this._httpService.returnSelectionTest();
 		this.index = this._httpService.returnSelectedRecipeIndex();
 	}
+
+
+
+	public toggled(open:boolean):void {
+		console.log('Dropdown is now: ', open);
+	}
+ 
+	public toggleDropdown($event:MouseEvent):void {
+		$event.preventDefault();
+		$event.stopPropagation();
+		this.status.isopen = !this.status.isopen;
+  	}
 }
