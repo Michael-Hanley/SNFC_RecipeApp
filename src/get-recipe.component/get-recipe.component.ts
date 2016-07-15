@@ -9,16 +9,18 @@ import {SHOPPING_LIST} from "../mock/shopping-list";
 import {shoppingList} from "../shared/shoppingList";
 import { DROPDOWN_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 import {CORE_DIRECTIVES} from '@angular/common';
+import {FormGroup, FormControl, REACTIVE_FORM_DIRECTIVES} from "@angular/forms";
+
 
 @Component
 ({
     templateUrl: 'src/get-recipe.component/get-recipe.tpl.html',
-	directives: [DROPDOWN_DIRECTIVES, CORE_DIRECTIVES],
+	directives: [DROPDOWN_DIRECTIVES, CORE_DIRECTIVES, REACTIVE_FORM_DIRECTIVES],
     providers: [HttpService]
 })
 export class GetRecipeComponent implements OnInit
 {	
-	//drop down boostrap req
+	//dropdown boostrap requirments 
 	public disabled:boolean = false;
   	public status:{isopen:boolean} = {isopen: false};
 
@@ -26,10 +28,19 @@ export class GetRecipeComponent implements OnInit
 	index: number; // index of the selected recipe
 	customerInput: string; // Search term the customer has entered
 	selectedRecipe: boolean = false; // Testing if the customer has selected a recipe. 
-	allergies: Array<any> = ['eggs', 'egg', 'fish', 'milk', 'peanuts', 'shellfish', 'soya', 'wheat', 'soy', 'soy milk', 'egg noodles'];
+
+	// allergies form filtering
+	allergens: Array<any> = ['eggs', 'egg', 'fish', 'milk', 'peanuts', 'shellfish', 'soya', 'wheat', 'soy', 'soy milk', 'egg noodles'];
+	myForm: FormGroup;
+	selectedAllergens: Array<any>=[];
+
 
 	constructor(private _httpService: HttpService, 
-		private _shoppingListService: ShoppingListService) { }
+		private _shoppingListService: ShoppingListService) {
+			this.myForm = new FormGroup({
+				'item': new FormControl([''])
+			});
+		 }
 	
 	/**	
 	* captures the array of the specific recipe the user had picked 
@@ -75,6 +86,18 @@ export class GetRecipeComponent implements OnInit
 				response => this.recipes = response
 			);
 		this.index = null;
+	}
+
+	onAddToAllergens(item)
+	{
+		
+		for(let i=0; i<this.selectedAllergens.length;i++)
+			if(this.selectedAllergens[i] == item)
+				this.selectedAllergens.slice(i,0);
+			else
+				this.selectedAllergens.push(item);
+			
+			console.log(this.selectedAllergens[0]);
 	}
 
 	/**

@@ -13,6 +13,11 @@ $fontSizeMobile: 12px;
   @extend %table-condensed;
 }
 */
+.allergen-checkbox {
+  margin-left:25px;
+  margin-right: -10px;
+}
+
 body {
   padding: 32px;
   font-family: "Roboto", Arial, sans-serif;
