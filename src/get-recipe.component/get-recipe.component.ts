@@ -35,12 +35,11 @@ export class GetRecipeComponent implements OnInit
 	selectedAllergens: Array<any>;
 
 
-	constructor(private _httpService: HttpService, 
-		private _shoppingListService: ShoppingListService) {
-			this.myForm = new FormGroup({
-				'item': new FormControl([''])
-			});
-		 }
+	constructor(private _httpService: HttpService, private _shoppingListService: ShoppingListService) {
+		this.myForm = new FormGroup({
+			'item': new FormControl([''])
+		});
+	}
 	
 	/**	
 	* captures the array of the specific recipe the user had picked 
@@ -92,10 +91,8 @@ export class GetRecipeComponent implements OnInit
 
 	onAddToAllergens(p:number)
 	{
-		console.log(this.allergens[p]);
 		this._httpService.saveAllergenInfo(this.allergens[p]);
 		this.selectedAllergens = this._httpService.returnAllergenInfo();
-		console.log(this.selectedAllergens);
 	}
 
 	/**
