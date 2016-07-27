@@ -19,9 +19,9 @@
 			Allergens <span class="caret"></span>
 			</button>
 			<ul dropdownMenu role="menu" aria-labelledby="single-button">
-				<div class="checkbox allergen-checkbox" *ngFor="let item of allergens; let i=index">
+				<div class="checkbox allergen-checkbox" *ngFor="let item of allergens; let p=index">
 					<input type="checkbox"
-						(click)="onAddToAllergens(allergens[i])">
+						(click)="onAddToAllergens(p)">
 						{{item}}
 				</div>
 			</ul>
@@ -39,13 +39,13 @@
 				{{ recipe.Recipe }}
 			</div>
 				<div class="panel-body" *ngIf="index == i && selectedRecipe == true">
-					<div *ngFor="let ingredients of recipes[i].Ingredients">
-						- {{ ingredients }}
-						<div *ngFor="let allergen of allergies; let i=index">
-							<div *ngIf="ingredients == allergen">
+					<div *ngFor="let ingredient of recipes[i].Ingredients">
+						- {{ ingredient }}
+						<div *ngFor="let allergen of selectedAllergens; let i=index">
+							<div *ngIf="ingredient == allergen">
 								<br>
 								<div class="alert alert-danger">
-									Warning Allergen! - {{ingredients}}
+									Warning Allergen! - {{ingredient}}
 								</div>
 							</div>
 						</div>

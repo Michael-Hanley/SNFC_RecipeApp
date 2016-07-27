@@ -5,6 +5,7 @@ import 'rxjs/Rx';
 import {Recipe} from "../shared/recipe";
 import {RECIPE_LIST} from "../mock/recipe-list";
 import {CUSTOMERINPUT} from "../mock/customer-input";
+import {ALLERGEN_LIST} from "../mock/allergen-list";
 
 @Injectable()
 export class HttpService 
@@ -157,5 +158,23 @@ export class HttpService
 		return RECIPE_LIST;
 	}
 
+	saveAllergenInfo(item:any)
+	{
+		for(let i = 0; i < ALLERGEN_LIST.length; i++ )
+		{
+			if ( item == ALLERGEN_LIST[i])
+			{
+				ALLERGEN_LIST.splice(i, 1);
+				return 0;
+			}
+		}
+		ALLERGEN_LIST.push(item);
+		console.log(ALLERGEN_LIST);
+	}
+
+	returnAllergenInfo()
+	{
+		return ALLERGEN_LIST;
+	}
 
 }

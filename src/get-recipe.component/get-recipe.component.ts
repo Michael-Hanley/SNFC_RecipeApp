@@ -32,7 +32,7 @@ export class GetRecipeComponent implements OnInit
 	// allergies form filtering
 	allergens: Array<any> = ['eggs', 'egg', 'fish', 'milk', 'peanuts', 'shellfish', 'soya', 'wheat', 'soy', 'soy milk', 'egg noodles'];
 	myForm: FormGroup;
-	selectedAllergens: Array<any>=[];
+	selectedAllergens: Array<any>;
 
 
 	constructor(private _httpService: HttpService, 
@@ -57,6 +57,8 @@ export class GetRecipeComponent implements OnInit
 		this.selectedRecipe = selected;
 		this.index = i;
 		this._httpService.saveSelectedRecipe(this.index, this.selectedRecipe);
+		this.selectedAllergens = this._httpService.returnAllergenInfo();
+		console.log(this.selectedAllergens);
 	}
 
 	/**
@@ -88,16 +90,12 @@ export class GetRecipeComponent implements OnInit
 		this.index = null;
 	}
 
-	onAddToAllergens(item)
+	onAddToAllergens(p:number)
 	{
-		
-		for(let i=0; i<this.selectedAllergens.length;i++)
-			if(this.selectedAllergens[i] == item)
-				this.selectedAllergens.slice(i,0);
-			else
-				this.selectedAllergens.push(item);
-			
-			console.log(this.selectedAllergens[0]);
+		console.log(this.allergens[p]);
+		this._httpService.saveAllergenInfo(this.allergens[p]);
+		this.selectedAllergens = this._httpService.returnAllergenInfo();
+		console.log(this.selectedAllergens);
 	}
 
 	/**
@@ -111,6 +109,7 @@ export class GetRecipeComponent implements OnInit
 		this.onGetRecipes();
 		this.selectedRecipe = this._httpService.returnSelectionTest();
 		this.index = this._httpService.returnSelectedRecipeIndex();
+		this.selectedAllergens = this._httpService.returnAllergenInfo();
 	}
 
 

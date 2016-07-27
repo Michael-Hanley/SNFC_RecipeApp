@@ -1,0 +1,1 @@
+export let ALLERGEN_LIST: Array<any>=[];
