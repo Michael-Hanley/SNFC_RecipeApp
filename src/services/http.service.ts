@@ -18,7 +18,7 @@ export class HttpService
 	createAuthorizationHeader(headers:Headers) 
 		{
 	    	headers.append('Authorization', 'Basic ' +
-	      		btoa('webdev:a%5i*ot!')); 
+	      		btoa('XXXXX:XXXXXX')); 
 	  	}
 	/**
 	* Main Search query based on the ingredients the recipe contains. 
